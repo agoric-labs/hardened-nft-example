@@ -35,7 +35,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.8.0",
-    "stargaze-query": "0.15.2"
+    "stargaze-query": "0.15.2",
+    "ses": "^1.1.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "5.0.0",

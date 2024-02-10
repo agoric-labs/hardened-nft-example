@@ -1,3 +1,5 @@
+import '../utils/installSesLockdown';
+
 import '../styles/globals.css';
 import '@interchain-ui/react/styles';
 
