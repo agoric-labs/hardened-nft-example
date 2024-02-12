@@ -1,3 +1,80 @@
+# Bug Report
+
+### Set up this environment
+
+See git commit history on how to recreate this environment
+
+### Reproduce steps
+
+- `yarn && yarn dev`
+- navigate to the url in the output of `yarn dev`
+- Observe below error
+
+### Error observed
+
+#### Stack trace in browser
+```
+Server Error
+ReferenceError: exports is not defined
+This error happened while generating the page. Any console logs will be displayed in the terminal window.
+Call Stack
+Object
+node_modules/next/dist/pages/_document.js (2:0)
+eval
+file:///Users/luqi/github/Agoric/hardened-nft-example/node_modules/ses/src/make-evaluate.js (92:27)
+./node_modules/next/dist/pages/_document.js
+file:///Users/luqi/github/Agoric/hardened-nft-example/.next/server/vendor-chunks/next.js (152:1)
+__webpack_require__
+file:///Users/luqi/github/Agoric/hardened-nft-example/.next/server/webpack-runtime.js (33:42)
+__webpack_exec__
+file:///Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/_document.js (52:39)
+<unknown>
+file:///Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/_document.js (53:83)
+__webpack_require__.X
+file:///Users/luqi/github/Agoric/hardened-nft-example/.next/server/webpack-runtime.js (185:21)
+<unknown>
+file:///Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/_document.js (53:47)
+Object.<anonymous>
+file:///Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/_document.js (56:3)
+```
+
+#### Console Logs
+
+```
+yarn run v1.22.21
+$ next dev
+  ▲ Next.js 13.5.6
+  - Local:        http://localhost:3000
+
+ ✓ Ready in 1335ms
+ ✓ Compiled / in 1578ms (2927 modules)
+Removing unpermitted intrinsics
+  Removing intrinsics.%SharedSymbol%.observable
+ ⨯ [ReferenceError: __webpack_require__ is not defined
+  at Object.eval (webpack-internal:///./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES&page=%2F&preferredRegion=&absolutePagePath=.%2Fpages%2Findex.tsx&absoluteAppPath=private-next-pages%2F_app&absoluteDocumentPath=private-next-pages%2F_document&middlewareConfigBase64=e30%3D!:1:1)
+  at eval (eval at makeEvaluate (file:///Users/luqi/github/Agoric/hardened-nft-example/node_modules/ses/src/make-evaluate.js:92:27), <anonymous>:12:22)
+  at ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES&page=%2F&preferredRegion=&absolutePagePath=.%2Fpages%2Findex.tsx&absoluteAppPath=private-next-pages%2F_app&absoluteDocumentPath=private-next-pages%2F_document&middlewareConfigBase64=e30%3D! (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/index.js:22:1)
+  at __webpack_require__ (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/webpack-runtime.js:33:42)
+  at __webpack_exec__ (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/index.js:493:39)
+  at /Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/index.js:494:114
+  at __webpack_require__.X (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/webpack-runtime.js:185:21)
+  at /Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/index.js:494:47
+  at Object.<anonymous> (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/index.js:497:3)] {
+  page: '/'
+}
+ ✓ Compiled /_error in 2.7s (2929 modules)
+[ReferenceError: exports is not defined
+  at Object.eval (webpack-internal:///./node_modules/next/dist/pages/_document.js:2:23)
+  at eval (eval at makeEvaluate (file:///Users/luqi/github/Agoric/hardened-nft-example/node_modules/ses/src/make-evaluate.js:92:27), <anonymous>:12:22)
+  at ./node_modules/next/dist/pages/_document.js (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/vendor-chunks/next.js:152:1)
+  at __webpack_require__ (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/webpack-runtime.js:33:42)
+  at __webpack_exec__ (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/_document.js:52:39)
+  at /Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/_document.js:53:83
+  at __webpack_require__.X (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/webpack-runtime.js:185:21)
+  at /Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/_document.js:53:47
+  at Object.<anonymous> (/Users/luqi/github/Agoric/hardened-nft-example/.next/server/pages/_document.js:56:3)]
+```
+
 This is a Cosmos App project bootstrapped with [`create-cosmos-app`](https://github.com/cosmology-tech/create-cosmos-app).
 
 ## Getting Started
@@ -12,7 +89,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-## Learn More 
+## Learn More
 
 ### Chain Registry
 
